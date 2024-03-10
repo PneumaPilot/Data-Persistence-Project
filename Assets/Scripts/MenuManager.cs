@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ScoreManager.Instance.LoadScore();
         scoreField.SetText("HIGH SCORE: " + ScoreManager.Instance.highScoreName + ": " + ScoreManager.Instance.highScore);
     }
 

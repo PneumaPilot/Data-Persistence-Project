@@ -83,6 +83,7 @@ public class MainManager : MonoBehaviour
         {
             ScoreManager.Instance.highScore = m_Points;
             ScoreManager.Instance.highScoreName = ScoreManager.Instance.playerName;
+            ScoreManager.Instance.SaveScore();
         }
     }
 
