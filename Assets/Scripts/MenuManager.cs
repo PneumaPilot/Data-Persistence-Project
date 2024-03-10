@@ -2,28 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     public TextMeshProUGUI inputField;
     public TextMeshProUGUI scoreField;
 
-    public ScoreManager scoreManager;
-
     // Start is called before the first frame update
     void Start()
     {
-        scoreField.SetText("HIGH SCORE: " + scoreManager.highScoreName + ": " + scoreManager.highScore);
+        scoreField.SetText("HIGH SCORE: " + ScoreManager.Instance.highScoreName + ": " + ScoreManager.Instance.highScore);
     }
 
     public void SetName()
     {
-        scoreManager.playerName = inputField.text;
+        ScoreManager.Instance.playerName = inputField.text;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        scoreField.SetText("HIGH SCORE: " + scoreManager.highScoreName + ": " + scoreManager.highScore);
+        SceneManager.LoadScene(1);
     }
 }
